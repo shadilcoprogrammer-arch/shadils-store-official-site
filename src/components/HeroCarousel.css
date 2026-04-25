@@ -1,0 +1,334 @@
+.hero-carousel-wrapper {
+  padding: 32px 40px 12px 40px;
+}
+
+.hero-carousel {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory; /* Enable snapping */
+}
+
+.hero-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.hero-card {
+  min-width: 680px;
+  height: 380px;
+  border-radius: 24px;
+  background-color: #000;
+  position: relative;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  scroll-snap-align: start; /* Default for desktop */
+}
+
+.hero-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8), 0 0 20px rgba(8, 240, 126, 0.1);
+}
+
+.hero-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: transform 0.6s ease;
+}
+
+.hero-card:hover .hero-banner-img {
+  transform: scale(1.05);
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 50%, transparent 100%);
+}
+
+.hero-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 32px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+}
+
+.hero-text-content {
+  margin-bottom: 24px;
+  backdrop-filter: blur(2px);
+}
+
+.hero-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.hero-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-icon-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  background-color: transparent;
+}
+
+.hero-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-meta-title {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hero-meta-subtitle {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.hero-rating {
+  font-weight: 600;
+  color: #fff;
+}
+
+.hero-install-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.install-btn {
+  background-color: var(--mint-install);
+  color: #000;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(8, 240, 126, 0.3);
+}
+
+.install-btn:hover {
+  background-color: #07dd74;
+  box-shadow: 0 6px 20px rgba(8, 240, 126, 0.6);
+  transform: translateY(-2px);
+}
+
+.install-btn svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  display: block;
+}
+
+.install-desc {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 8px;
+  margin-right: 8px;
+}
+
+@media (max-width: 1024px) {
+  .hero-card {
+    min-width: 580px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-wrapper {
+    padding: 20px 20px 12px 20px;
+  }
+  
+  .hero-carousel {
+    gap: 16px;
+  }
+
+  .hero-card {
+    min-width: 88vw;
+    height: 440px;
+    border-radius: 20px;
+    scroll-snap-align: center; /* Center snapping on mobile */
+  }
+
+  .hero-card-content {
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-desc {
+    font-size: 14px;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .hero-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+  }
+
+  .install-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel-wrapper {
+    padding: 16px 16px 8px 16px;
+  }
+
+  .hero-card {
+    height: 360px;
+    min-width: 92vw;
+  }
+  
+  .hero-action-row {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .hero-title {
+    font-size: 20px;
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    -webkit-line-clamp: 2;
+  }
+
+  .hero-icon-wrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  .hero-meta-title {
+    font-size: 13px;
+  }
+
+  .hero-meta-subtitle {
+    font-size: 11px;
+  }
+
+  .install-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    width: 100%; /* Stack button on very small screens for better accessibility */
+  }
+
+  .hero-install-wrapper {
+    width: 100%;
+    align-items: center;
+  }
+
+  .install-desc {
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+/* Specific fix for ultra-small devices (like iPhone SE) */
+@media (max-width: 350px) {
+  .hero-card {
+    height: 320px;
+  }
+  .hero-title {
+    font-size: 18px;
+  }
+  .hero-desc {
+    display: none; /* Hide description on tiny screens to keep UI clean */
+  }
+}
+
+.open-btn {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+.open-btn:hover {
+  background-color: #f0f0f0;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.coming-soon-btn {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  box-shadow: none !important;
+  cursor: default !important;
+}
+
+.pending-btn {
+  background-color: #3b82f6 !important;
+  color: white !important;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+}
+
+.pending-btn:hover {
+  background-color: #2563eb !important;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5) !important;
+  transform: translateY(-2px);
+}

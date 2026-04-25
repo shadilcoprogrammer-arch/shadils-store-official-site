@@ -1,0 +1,39 @@
+.device-tabs-container {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: var(--bg-main);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.device-tabs {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  align-items: center;
+}
+
+.device-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.device-tab:hover {
+  background-color: var(--bg-hover);
+}
+
+.device-tab.active {
+  background-color: #e5f6ee;
+  color: #01875f;
+  border-color: #e5f6ee;
+}
