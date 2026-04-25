@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production / Builds
+dist/
+release/
+build/
+.next/
+out/
+
+# Android / Mobile (Ignoring for web deploy)
+android/
+capacitor.config.ts
+google-services.json
+
+# Electron (Ignoring for web deploy)
+electron/dist/
+*.exe
+*.dmg
+*.AppImage
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
